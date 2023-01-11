@@ -1,4 +1,16 @@
 import PropTypes from 'prop-types';
+import {
+  ListItem,
+  List,
+  Section,
+  Description,
+  Photo,
+  FullName,
+  NickName,
+  Location,
+  Label,
+  LabelValue,
+} from './Profile.styled';
 
 export const Profile = ({
   user: {
@@ -10,28 +22,28 @@ export const Profile = ({
   },
 }) => {
   return (
-    <div key={tag} className="profile">
-      <div className="description">
-        <img src={avatar} alt={username} width="150px" />
-        <p> {username} </p>
-        <p> @{tag}</p>
-        <p> {location}</p>
-      </div>
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span> {followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span> {views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span> {likes}</span>
-        </li>
-      </ul>
-    </div>
+    <Section key={tag}>
+      <Description>
+        <Photo src={avatar} alt={username} />
+        <FullName> {username} </FullName>
+        <NickName> @{tag}</NickName>
+        <Location> {location}</Location>
+      </Description>
+      <List>
+        <ListItem>
+          <Label>Followers</Label>
+          <LabelValue> {followers}</LabelValue>
+        </ListItem>
+        <ListItem>
+          <Label>Views</Label>
+          <LabelValue> {views}</LabelValue>
+        </ListItem>
+        <ListItem>
+          <Label>Likes</Label>
+          <LabelValue> {likes}</LabelValue>
+        </ListItem>
+      </List>
+    </Section>
   );
 };
 

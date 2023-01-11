@@ -3,18 +3,22 @@ import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
-import user from '../components/user.json';
-import data from '../components/data.json';
-import friends from '../components/friends.json';
-import transactions from '../components/transactions.json';
+import user from './Data/user.json';
+import data from './Data/data.json';
+import friends from './Data/friends.json';
+import transactions from './Data/transactions.json';
+
+import { Container } from './App.styled';
 
 export const App = () => {
+  const isTitle = false;
   return (
-    <>
+    <Container>
       <Profile user={user} />
-      <Statistics title="Upload stats" stats={data} />
+      <h2>{isTitle ? 'Upload stat' : ''}</h2>
+      <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </>
+    </Container>
   );
 };
