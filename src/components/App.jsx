@@ -11,11 +11,10 @@ import transactions from './Data/transactions.json';
 import { Container } from './App.styled';
 
 export const App = () => {
-  const isTitle = false;
   return (
     <Container>
       <Profile user={user} />
-      <h2>{isTitle ? 'Upload stat' : ''}</h2>
+
       <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />

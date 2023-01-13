@@ -7,10 +7,10 @@ import {
   Label,
   LabelValue,
 } from './Statistics.styled';
-export const Statistics = ({ title = '', stats }) => {
+export const Statistics = ({ title, stats }) => {
   return (
     <>
-      <Title> {title}</Title>
+      <Title>{title && <h2> {title}</h2>}</Title>
       <Board className="statistics">
         {stats.map(({ id, label, percentage }) => (
           <List key={id}>
